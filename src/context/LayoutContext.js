@@ -14,8 +14,14 @@ class LayoutContextProvider extends Component {
       bg: '#4b2c20'
     }
    }
+  
+   toggleLayout = () => {
+     this.setState({
+       nightMode : !this.state.nightMode
+     })
+   }
   render() { 
-    return ( <LayoutContext.Provider value={{...this.state}}>
+    return ( <LayoutContext.Provider value={{...this.state, toggleLayout: this.toggleLayout}}>
       {this.props.children}
     </LayoutContext.Provider> );
   }
