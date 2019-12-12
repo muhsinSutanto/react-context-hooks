@@ -1,24 +1,14 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/Header";
-import Body from "./components/Body";
-import LayoutContextProvider from "./context/LayoutContext";
-import AuthContextProvider from "./context/AuthContext";
-import ServiceContextProvider from "./context/ServiceContext";
-import ToggleLayout from "./components/ToggleLayout";
+import BookContextProvider from "./context/BookContext";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <AuthContextProvider>
-        <LayoutContextProvider>
-          <Header />
-          <ServiceContextProvider>
-            <Body />
-          </ServiceContextProvider>
-          <ToggleLayout />
-        </LayoutContextProvider>
-      </AuthContextProvider>
+      <BookContextProvider>
+        <Navbar/>
+      </BookContextProvider>
     </div>
   );
 }
