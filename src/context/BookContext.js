@@ -7,7 +7,7 @@ const BookContextProvider = props => {
   const [books, setBooks] = useState([
     { id: 1, title: "pelangi", author: "ridwan" },
     { id: 2, title: "bumi", author: "rahmat" },
-    { id: 1, title: "bulan", author: "raja" }
+    { id: 3, title: "bulan", author: "raja" }
   ]);
 
   const addBook = (title, author) => {
@@ -17,7 +17,7 @@ const BookContextProvider = props => {
   const removeBook = id => {
     setBooks(books.filter(book => book.id !== id));
   };
-  console.log("book", books);
+  // console.log("book", books);
 
   return (
     <BookContext.Provider value={{ books, addBook, removeBook }}>
