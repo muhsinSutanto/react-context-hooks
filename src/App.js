@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import LayoutContextProvider from "./context/LayoutContext";
 import AuthContextProvider from "./context/AuthContext";
+import ServiceContextProvider from "./context/ServiceContext";
 import ToggleLayout from "./components/ToggleLayout";
 
 function App() {
@@ -12,7 +13,9 @@ function App() {
       <AuthContextProvider>
         <LayoutContextProvider>
           <Header />
-          <Body />
+          <ServiceContextProvider>
+            <Body />
+          </ServiceContextProvider>
           <ToggleLayout />
         </LayoutContextProvider>
       </AuthContextProvider>

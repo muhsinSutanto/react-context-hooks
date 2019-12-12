@@ -1,16 +1,20 @@
 import React, { useContext } from "react";
 import { LayoutContext } from "../context/LayoutContext";
+import { ServiceContext } from "../context/ServiceContext";
 
 const Body = () => {
   const { nightMode, day, night } = useContext(LayoutContext);
+  const { serviceList } = useContext(ServiceContext);
   const mood = nightMode ? night : day;
+
   return (
     <nav>
       <ul>
-        <li style={{ background: mood.bg, color: mood.color }}>pay</li>
-        <li style={{ background: mood.bg, color: mood.color }}>promo</li>
-        <li style={{ background: mood.bg, color: mood.color }}>top up</li>
-        <li style={{ background: mood.bg, color: mood.color }}>more</li>
+        {serviceList.map((item, idx) => (
+          <li key={idx} style={{ background: mood.bg, color: mood.color }}>
+            {item.title}
+          </li>
+        ))}
       </ul>
     </nav>
   );
